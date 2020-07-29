@@ -1,22 +1,13 @@
 /**
  * 0,05 - P2
  * 
- * 0,10 - P1
+ * 0,10 - P1 & P2
  * 
- * 0,25 - P1 & P2
+ * 0,25 - P1 
  * 
- * 0,50 - P0
+ * 0,50 - P0 & P1
  * 
- * 1,00 - P0 & P2
- */
-/**
- * P0 - Verde
- * 
- * P1 - Azul
- * 
- * P2 - Laranja
- * 
- * GND - Marrom
+ * 1,00 - P0
  */
 let P0 = false
 let P1 = false
@@ -38,20 +29,20 @@ basic.forever(function () {
         P2 = false
     }
     basic.pause(100)
-    if (P0 && P2) {
-        basic.showNumber(1)
+    if (P0 && P1) {
+        basic.showNumber(0.5)
     } else {
         if (P1 && P2) {
-            basic.showNumber(0.25)
+            basic.showNumber(0.1)
         } else {
             if (P2) {
                 basic.showNumber(0.05)
             } else {
                 if (P1) {
-                    basic.showNumber(0.1)
+                    basic.showNumber(0.25)
                 } else {
                     if (P0) {
-                        basic.showNumber(0.5)
+                        basic.showNumber(1)
                     } else {
                         basic.clearScreen()
                     }
